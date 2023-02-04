@@ -30,6 +30,7 @@ module.exports = {
         functions: 'always-multiline',
       },
     ],
+    'space-before-function-paren': ['error', 'never'],
     'no-undef': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-pascal-case': 'off',
