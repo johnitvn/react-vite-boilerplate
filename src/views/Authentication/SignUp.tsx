@@ -1,7 +1,7 @@
 import React from 'react'
 import Signup from '../../assets/authentication/signup/images/signup.svg'
 
-export class SignUp extends React.Component {
+export default class SignUp extends React.Component {
   render(): React.ReactNode {
     return (
       <div className="lg:flex">

@@ -1,7 +1,7 @@
 import React from 'react'
 import Signin from '../../assets/authentication/signin/images/signin.svg'
 
-export class SignIn extends React.Component {
+export default class SignIn extends React.Component {
   render(): React.ReactNode {
     return (
       <>
