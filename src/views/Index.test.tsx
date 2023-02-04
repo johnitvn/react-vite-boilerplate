@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import PowerBy from './PowerBy'
+import { PowerBy } from './Index'
 
 describe('PowerBy.tsx', () => {
   test('Should render h1', () => {

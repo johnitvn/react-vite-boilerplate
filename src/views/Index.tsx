@@ -1,7 +1,58 @@
 import React from 'react'
-import PowerBy from '../components/power-by/PowerBy'
+import ReactLogo from '../assets/index/images/react.svg'
+import ViteLogo from '../assets/index/images/vite.svg'
+import ViteTestLogo from '../assets/index/images/vite-test.svg'
+import TailwindCssLogo from '../assets/index/images/tailwindcss.svg'
+import CypressLogo from '../assets/index/images/cypress.jpeg'
+import CucumberLogo from '../assets/index/images/cucumberjs.png'
+import Illustration from '../assets/index/images/illustration.png'
 
-export default class HomePage extends React.Component {
+export const PowerBy: React.FunctionComponent = () => {
+  return (
+    <div className="grid grid-cols-6 text-black font-bold">
+      <div>
+        <a href="https://reactjs.org" className="px-12" target="_blank" rel="noreferrer">
+          <img src={ReactLogo} className="w-2/3 ml-[16%]" alt="React logo" />
+        </a>
+      </div>
+      <div className="px-8">
+        <a href="https://vitejs.dev" className="px-12" target="_blank" rel="noreferrer">
+          <img src={ViteLogo} className="w-full" alt="Vite logo" />
+        </a>
+      </div>
+
+      <div className="px-8">
+        <a href="https://vitetest.dev" className="px-12" target="_blank" rel="noreferrer">
+          <img src={ViteTestLogo} className="w-full" alt="Vite test logo" />
+        </a>
+      </div>
+
+      <div className="px-8">
+        <a href="https://tailwindcss.com/" className="px-12" target="_blank" rel="noreferrer">
+          <img src={TailwindCssLogo} className="w-full mt-5" alt="Tailwind css logo" />
+        </a>
+      </div>
+      <div className="px-8">
+        <a href="https://cypress.io/" className="px-12" target="_blank" rel="noreferrer">
+          <img src={CypressLogo} className="w-full" alt="Cypress logo" />
+        </a>
+      </div>
+      <div className="px-8">
+        <a href="https://cucumber.io/" className="px-12" target="_blank" rel="noreferrer">
+          <img src={CucumberLogo} className="w-full" alt="CucumberJs logo" />
+        </a>
+      </div>
+      <div className="px-8 text-center">React</div>
+      <div className="px-8 text-center">Vite</div>
+      <div className="px-8 text-center">Vite Test</div>
+      <div className="px-8 text-center">Tailwind Css</div>
+      <div className="px-8 text-center">Cypress</div>
+      <div className="px-8 text-center">Cucumber</div>
+    </div>
+  )
+}
+
+export default class Index extends React.Component {
   componentDidMount() {
     document.body.addEventListener('click', this.checkShouldShowMenu)
   }
@@ -43,7 +94,7 @@ export default class HomePage extends React.Component {
 
   render(): React.ReactNode {
     return (
-      <div className="leading-normal tracking-normal text-white gradient">
+      <div className="leading-normal tracking-normal text-white" style={{ background: 'linear-gradient(90deg, #d53369 0%, #daae51 100%)' }}>
         <nav id="header" className="w-full z-30 text-white">
           <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
             <div className="pl-4 flex items-center">
@@ -98,13 +149,10 @@ export default class HomePage extends React.Component {
           <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
               <h1 className="my-4 text-5xl font-bold leading-tight">Rapid Boilerplate!</h1>
-              <p className="leading-normal text-2xl mb-8">Build with react, vite, tailwind css, cypress and cucumber</p>
-              <button className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Goto Dashboard
-              </button>
+              <p className="leading-normal text-2xl mb-8">Newest technologies, latest versions, regular maintenance and updates</p>
             </div>
             <div className="w-full md:w-3/5 py-6 text-center">
-              <img className="w-full md:w-4/5 z-50" src="hero.png" />
+              <img className="w-full md:w-4/5 z-50" src={Illustration} />
             </div>
           </div>
         </div>
