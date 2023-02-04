@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 6789",
+    "dev": "vite dev",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest",
-    "test:e2e": "server-test dev :6789 cypress:run",
-    "cypress:run": "cypress run -q",
+    "test": "vitest run",
+    "test:watch": "vitest run",
+    "e2e": "server-test 'vite dev --port 6789' :6789 'cypress run -q --e2e'",
+    "e2e:watch": "server-test 'vite dev --port 6789' :6789 'cypress open --e2e --browser chrome'",
     "lint": "eslint src --ext ts,tsx",
     "lint:fix": "yarn lint --fix",
     "prepare": "husky install"
@@ -20,6 +21,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@testing-library/react": "^13.4.0",
@@ -29,6 +32,7 @@
     "@vitejs/plugin-react-swc": "^3.1.0",
     "autoprefixer": "^10.4.13",
     "cypress": "^12.5.1",
+    "cypress-mochawesome-reporter": "^3.2.3",
     "eslint": "8.33.0",
     "eslint-config-standard": "17.0.0",
     "eslint-config-standard-jsx": "11.0.0",

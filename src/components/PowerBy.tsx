@@ -17,12 +17,15 @@ export default class PowerBy extends React.Component {
           <a href="https://tailwindcss.com/" className="w-1/6 p-5" target="_blank" rel="noreferrer">
             <img src="/tailwindcss.svg" className="logo w-full" alt="Tailwind css logo" />
           </a>
-          <a href="https://docs.cypress.io/" className="w-1/6 p-5" target="_blank" rel="noreferrer">
+          <a href="https://cypress.io/" className="w-1/6 p-5" target="_blank" rel="noreferrer">
             <img src="/cypress.jpeg" className="logo w-full" alt="Cypress logo" />
           </a>
+          <a href="https://cucumber.io/" className="w-1/6 p-5" target="_blank" rel="noreferrer">
+            <img src="/cucumberjs.png" className="logo w-full" alt="CucumberJs logo" />
+          </a>
         </div>
-        <div className="pt-6 text-5xl">
-          <h1>React + Vite + Vite Test + Cypress + Tailwind Css</h1>
+        <div className="pt-6 text-5xl text-center">
+          <h1>React + Vite + Vite Test + Cypress + Tailwind Css + CucumberJs</h1>
         </div>
       </div>
     )
