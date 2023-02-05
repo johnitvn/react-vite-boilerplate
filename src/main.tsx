@@ -5,7 +5,7 @@ import './assets/styles/app.css'
 
 import Authenticate from './layouts/Authenticate'
 import NotFound from './views/errors/NotFound'
-import SignIn from './views/authen/SignIn'
+import SignIn from './views/authen/sign-in/SignIn'
 import Application from './layouts/Application'
 import AppIndex from './views/app/Index'
 import UserIndex from './views/app/users/UserIndex'
@@ -13,6 +13,8 @@ import UserCreate from './views/app/users/UserCreate'
 import PostIndex from './views/app/posts/PostIndex'
 import CategoryIndex from './views/app/categories/CategoryIndex'
 import TodoIndex from './views/app/todo/TodoIndex'
+import Register from './views/authen/register/Register'
+import Forgot from './views/authen/forgot/Forgot'
 
 const root = document.getElementById('root') as HTMLElement
 ReactDOM.createRoot(root).render(
@@ -34,11 +36,11 @@ ReactDOM.createRoot(root).render(
         <Route path="todo">
           <Route path="" index element={<TodoIndex />} />
         </Route>
-
-        <Route path="*" element={<NotFound />} />
       </Route>
-      <Route path="/authen" element={<Authenticate />}>
+      <Route path="/" element={<Authenticate />}>
         <Route path="sign-in" element={<SignIn />} />
+        <Route path="register" element={<Register />} />
+        <Route path="forgot" element={<Forgot />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
