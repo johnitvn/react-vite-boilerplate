@@ -25,9 +25,9 @@ export default class AppHeader extends Component {
 
   render(): ReactNode {
     return (
-      <nav className="header print:hidden">
+      <nav className="header">
         {/* <!-- App Header  --> */}
-        <div className="header-container relative flex w-full bg-white dark:bg-navy-700 print:hidden">
+        <div className="header-container relative flex w-full bg-white dark:bg-navy-700">
           {/* <!-- Header Items --> */}
           <div className="flex w-full items-center justify-between">
             {/* <!-- Left: Sidebar Toggle Button --> */}

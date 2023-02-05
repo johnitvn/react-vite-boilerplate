@@ -1,10 +1,16 @@
 import { Component, ReactNode } from 'react'
 
 export default class SidebarPanel extends Component {
+  componentDidMount() {
+    document.body.classList.add('has-sidebar-panel')
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove('has-sidebar-panel')
+  }
+
   clodeSidebar() {
-    if (document.body.classList.contains('is-sidebar-open')) {
-      document.body.classList.remove('is-sidebar-open')
-    }
+    document.body.classList.remove('is-sidebar-open')
   }
 
   render(): ReactNode {

@@ -8,7 +8,6 @@ export default class Application extends Component {
   render(): ReactNode {
     return (
       <>
-        <SidebarPanel />
         <MainSidebar />
         <AppHeader />
         <main className="main-content w-full px-[var(--margin-x)] pb-8">

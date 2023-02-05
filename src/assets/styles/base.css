@@ -38,6 +38,7 @@ body.is-monochrome::before {
 }
 
 /* Sidebar Toggle Button */
+
 .sidebar-toggle span {
   @apply h-[2px] w-5 translate-x-0 bg-current transition-all duration-[.25s] ease-in-out;
 }
@@ -46,20 +47,8 @@ body.is-monochrome::before {
   @apply w-3;
 }
 
-.is-sidebar-open .sidebar-toggle span {
-  @apply ml-2 w-[11px] -translate-x-2;
-}
-
-.is-sidebar-open .sidebar-toggle span:nth-child(1) {
-  @apply -rotate-45;
-}
-
-.is-sidebar-open .sidebar-toggle span:nth-child(2) {
-  @apply hidden;
-}
-
-.is-sidebar-open .sidebar-toggle span:nth-child(3) {
-  @apply rotate-45;
+body:not(.has-sidebar-panel) .sidebar-toggle {
+  @apply md:hidden;
 }
 
 /* Sidebar */
@@ -178,42 +167,6 @@ nav.header .header-container {
   @apply ease-out xl:ml-[calc(var(--main-sidebar-width)+var(--sidebar-panel-width))];
 }
 
-/* Right Sidebar */
-
-.right-sidebar .right-sidebar-overlay {
-  @apply animate-[cubic-bezier(0,0,0.2,1)_fade-in_200ms_forwards];
-}
-
-.right-sidebar .right-sidebar-overlay.animate\:leave {
-  @apply animate-[cubic-bezier(0.4,0,0.2,1)_fade-out_200ms_forwards];
-}
-
-.right-sidebar .right-sidebar-content {
-  @apply animate-[cubic-bezier(0,0,0.2,1)_right-sidebar-open_200ms_forwards];
-}
-
-.right-sidebar .right-sidebar-content.animate\:leave {
-  @apply animate-[cubic-bezier(0.4,0,0.2,1)_right-sidebar-close_200ms_forwards];
-}
-
-@keyframes right-sidebar-open {
-  from {
-    transform: translate3d(100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes right-sidebar-close {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(100%, 0, 0);
-  }
-}
-
 /* Sideblock styles */
 .navigation\:sideblock {
   @apply [--sideblock-width:260px];
@@ -261,16 +214,6 @@ nav.header .header-container {
 .min-h-100vh {
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
-}
-
-/* Demo inline space */
-.inline-space > :not([hidden]) {
-  @apply mb-2.5 mr-2.5;
-}
-
-/* Demo inline code style */
-code.inline-code {
-  @apply rounded bg-slate-100 py-0.5 px-1 text-xs+ text-secondary dark:bg-navy-800 dark:text-secondary-light;
 }
 
 /* Scrollbar styles */
