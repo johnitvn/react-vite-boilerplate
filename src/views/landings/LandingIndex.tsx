@@ -1,11 +1,10 @@
 import { Component, ReactNode } from 'react'
-import { Outlet } from 'react-router-dom'
 
-export default class Landing extends Component {
+export default class LandingIndex extends Component {
   render(): ReactNode {
     return (
       <>
-        <Outlet />
+        <h1>Index</h1>
       </>
     )
   }
