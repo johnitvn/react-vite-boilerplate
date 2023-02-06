@@ -1,22 +1,54 @@
 import { Component, ReactNode } from 'react'
+import { Link } from 'react-router-dom'
+import { WithRouter, WithRouterInteface } from '../hoc/WithRouter'
 
-export type MainSidebarItemProps = {
+export type MainSidebarItemProps = WithRouterInteface & {
   href: string
   title: string
   icon: string
 }
 
-export default class MainSidebarItem extends Component<MainSidebarItemProps> {
+type MainSidebarItemState = {
+  active: boolean
+}
+
+class MainSidebarItem extends Component<MainSidebarItemProps> {
+  state: MainSidebarItemState = { active: false }
+
+  componentDidMount() {
+    this.updateActiveState()
+  }
+
+  componentDidUpdate(prevProps: MainSidebarItemProps) {
+    if (prevProps.location.pathname !== this.props.location.pathname) {
+      this.updateActiveState()
+    }
+  }
+
+  updateActiveState() {
+    const props = this.props
+    let active: boolean
+    if (this.props.href === '/app') {
+      active = props.location.pathname === props.href
+    } else {
+      active = props.location.pathname.startsWith(props.href)
+    }
+    console.log('Check', { curren: props.location.pathname, me: props.href, active })
+    this.setState({ active, lastPath: props.location.pathname })
+  }
+
   render(): ReactNode {
     return (
-      <a
-        href={this.props.href}
+      <Link
+        to={this.props.href}
         data-tooltip={this.props.title}
         data-placement="right"
-        className="tooltip-main-sidebar flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+        className={(this.state.active ? 'active ' : '') + 'tooltip-main-sidebar flex h-11 w-11 items-center justify-center rounded-lg outline-none '}
       >
         <i className={this.props.icon + ' text-xl'} />
-      </a>
+      </Link>
     )
   }
 }
+
+export default WithRouter(MainSidebarItem)

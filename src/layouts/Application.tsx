@@ -5,6 +5,16 @@ import MainSidebar from '../components/sidebars/MainSidebar'
 import '../assets/styles/app.css'
 
 export default class Application extends Component {
+  constructor(props: {}) {
+    super(props)
+    if (localStorage.getItem('color-mode') === 'dark') {
+      document.documentElement.classList.add('dark')
+    }
+    if (localStorage.getItem('chroma') === 'monochrome') {
+      document.body.classList.add('is-monochrome')
+    }
+  }
+
   render(): ReactNode {
     return (
       <>

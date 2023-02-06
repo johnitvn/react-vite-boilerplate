@@ -12,7 +12,7 @@ export default class MainSidebar extends Component {
             </a>
           </div>
 
-          <div className="is-scrollbar-hidden flex grow flex-col space-y-4 overflow-y-auto pt-6">
+          <div className="is-scrollbar-hidden flex grow flex-col space-y-4 overflow-y-auto pt-6  text-slate-600 dark:text-slate-300">
             <MainSidebarItem icon="fad fa-home" href="/app" title="Home" />
             <MainSidebarItem icon="fad fa-newspaper" href="/app/posts" title="Posts" />
             <MainSidebarItem icon="fad fa-hurricane" href="/app/categories" title="Categories" />
@@ -20,7 +20,7 @@ export default class MainSidebar extends Component {
             <MainSidebarItem icon="fad fa-users" href="/app/users" title="Users" />
           </div>
 
-          <div className="flex flex-col items-center space-y-3 py-3">
+          <div className="flex flex-col items-center space-y-3 py-3  text-slate-600 dark:text-slate-300">
             <MainSidebarItem icon="fad fa-gear" href="#" title="Settings" />
           </div>
         </div>

@@ -10,8 +10,8 @@ export interface WithRouterInteface {
 export const WithRouter = <P extends {}>(Component: React.ComponentType<P>) => {
   return (props: Omit<P, keyof WithRouterInteface>) => {
     const location = useLocation()
-    const navigate = useNavigate()
     const params = useParams()
+    const navigate = useNavigate()
     return <Component {...(props as P)} {...{ location, navigate, params }} />
   }
 }

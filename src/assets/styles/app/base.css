@@ -47,6 +47,26 @@ body:not(.has-sidebar-panel) .sidebar-toggle {
   @apply md:hidden;
 }
 
+.is-sidebar-open .sidebar-toggle {
+  @apply ml-18;
+}
+
+.is-sidebar-open .sidebar-toggle span {
+  @apply ml-2 w-[11px] -translate-x-2;
+}
+
+.is-sidebar-open .sidebar-toggle span:nth-child(1) {
+  @apply -rotate-45;
+}
+
+.is-sidebar-open .sidebar-toggle span:nth-child(2) {
+  @apply hidden;
+}
+
+.is-sidebar-open .sidebar-toggle span:nth-child(3) {
+  @apply rotate-45;
+}
+
 /* Sidebar */
 .main-sidebar {
   @apply fixed top-0 left-0 z-40 h-full w-[var(--main-sidebar-width)] shrink-0 -translate-x-full transform-gpu transition-transform duration-200 ease-in md:z-[60] md:translate-x-0;
@@ -70,6 +90,22 @@ body:not(.has-sidebar-panel) .sidebar-toggle {
 
 .is-sidebar-open .sidebar-panel-min {
   @apply -translate-x-full;
+}
+
+.tooltip-main-sidebar:hover {
+  @apply bg-primary/20;
+}
+
+.dark .tooltip-main-sidebar:hover {
+  @apply bg-navy-300/30;
+}
+
+.tooltip-main-sidebar.active {
+  @apply bg-primary/25;
+}
+
+.dark .tooltip-main-sidebar.active {
+  @apply bg-navy-300/50;
 }
 
 /* Header */
